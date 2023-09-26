@@ -23,7 +23,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
-class OnsiUser(CustomUser, models.Model):
+class User(CustomUser, models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     phone = models.PositiveIntegerField()

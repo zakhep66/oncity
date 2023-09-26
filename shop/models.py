@@ -1,10 +1,10 @@
 from django.db import models
 
-from users.models import OnsiUser
+from users.models import User
 
 
 class Order(models.Model):
-    user_id = models.ForeignKey(OnsiUser, on_delete=models.CASCADE, related_name='order')
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='order')
     address = models.CharField(max_length=100)
     status = models.BooleanField(default=False)
     date = models.DateField()
