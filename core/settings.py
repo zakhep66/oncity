@@ -134,7 +134,7 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    os.environ.get('CORS_ALLOW')
+    os.environ.get('ALLOWED_HOSTS')
 ]
 
 SIMPLE_JWT = {
