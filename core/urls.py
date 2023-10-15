@@ -1,3 +1,4 @@
+from django.contrib import admin
 from django.urls import path, include
 
 from rest_framework_simplejwt.views import (
@@ -7,6 +8,8 @@ from rest_framework_simplejwt.views import (
 
 
 urlpatterns = [
+    path("admin/", admin.site.urls),
+
     path('shop/', include('shop.urls')),
     path('user/', include('users.urls')),
 
