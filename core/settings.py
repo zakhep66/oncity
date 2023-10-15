@@ -18,7 +18,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = [
-    'localhost' if not (allow := os.environ.get('ALLOWED_HOSTS')) else allow
+    '127.0.0.1'
 ]
 
 
@@ -134,7 +134,8 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    os.environ.get('ALLOWED_HOSTS')
+    os.environ.get('ALLOWED_HOSTS'),
+    'https://127.0.0.1:8000',
 ]
 
 SIMPLE_JWT = {
