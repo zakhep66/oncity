@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 from rest_framework.permissions import IsAuthenticated
 
 from .models import Product, Category, Value, Attribute, Order
@@ -23,10 +23,9 @@ class ValueViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated, ]
 
 
-class AttributeViewSet(viewsets.ModelViewSet):
+class AttributeListAPIView(generics.ListAPIView):
     queryset = Attribute.objects.all()
     serializer_class = AttributeSerializer
-    permission_classes = [IsAuthenticated, ]
 
 
 class OrderViewSet(viewsets.ModelViewSet):
