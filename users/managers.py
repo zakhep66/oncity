@@ -23,6 +23,6 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 
-class OnsiUserManager(CustomUserManager):
+class UserManager(CustomUserManager):
     def create_superuser(self, email, password, **extra_fields):
         pass

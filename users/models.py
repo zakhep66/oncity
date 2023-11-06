@@ -2,7 +2,7 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin, Group, Permission
 from django.db import models
 
-from users.managers import CustomUserManager, OnsiUserManager
+from users.managers import CustomUserManager, UserManager
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
@@ -30,7 +30,7 @@ class User(CustomUser, models.Model):
     address = models.CharField(max_length=200)
     cart = models.TextField()
 
-    objects = OnsiUserManager()
+    objects = UserManager()
 
     class Meta:
         verbose_name = 'Пользователь'
