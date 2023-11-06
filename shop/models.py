@@ -25,6 +25,7 @@ class Product(models.Model):
     status = models.BooleanField(default=False)
     category_id = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='product')
     image = models.ImageField()
+    attribute_id = models.ForeignKey('Attribute', on_delete=models.CASCADE, related_name='product', default=None)
 
     class Meta:
         verbose_name = 'Продукт'
